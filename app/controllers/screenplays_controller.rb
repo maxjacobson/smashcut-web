@@ -1,11 +1,19 @@
 class ScreenplaysController < ApplicationController
-  before_action :lookup_and_protect, only: [:show, :edit, :update, :destroy]
+  before_action :lookup_screenplay, only: [:show, :edit, :update, :destroy]
 
   def new
     @screenplay = Screenplay.new
   end
 
   def show
+    if params[:format] == 'pdf'
+      filename, pretty_filename = @screenplay.save_to_pdf
+      send_file(filename, :type => :pdf, :filename => pretty_filename)
+    end
+  end
+
+  def index
+    @screenplays = Screenplay.all
   end
 
   def edit
@@ -40,15 +48,10 @@ class ScreenplaysController < ApplicationController
   private
 
   def screenplay_params
-    params.require(:screenplay).permit(
-      :fountain, :title, :author_name, :password)
+    params.require(:screenplay).permit(:fountain, :title)
   end
 
-  def lookup_and_protect
+  def lookup_screenplay
     @screenplay = Screenplay.find(params[:id])
-    # request_http_basic_authentication
-    # authenticate_with_http_basic do |username, password|
-    #   @screenplay.author_name == username && @screenplay.password == password
-    # end
   end
 end

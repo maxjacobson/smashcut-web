@@ -1,3 +1,19 @@
 class Screenplay < ActiveRecord::Base
-  validates :fountain, :author_name, :title, :password, presence: true
+  validates :fountain, :title, presence: true
+
+  delegate :scene_count, to: :smashcut
+
+  def save_to_pdf
+    pretty_filename = title.parameterize + ".pdf"
+    unique_filename = SecureRandom.hex + "-" + pretty_filename
+    path = Rails.root.join("tmp", unique_filename)
+    smashcut.to_pdf(path: path)
+    [path, pretty_filename]
+  end
+
+  private
+
+  def smashcut
+    @smashcut ||= Smashcut::Screenplay.from_fountain(fountain)
+  end
 end

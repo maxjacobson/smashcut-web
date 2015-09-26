@@ -6,14 +6,19 @@
 </p>
 
 <p>
-  <strong>Fountain:</strong>
-  <%= @screenplay.fountain %>
+  <strong>Stats:</strong>
+  <%= pluralize @screenplay.scene_count, 'scene' %>
 </p>
 
-<%# <p> %>
-<%#   <strong>Stats:</strong> %>
-<%#   <%= pluralize 'scene', @screenplay.scene_count %1> %>
-<%# </p> %>
+<p>
+  <strong>Download:</strong>
+  <%= link_to 'pdf', screenplay_path(@screenplay, 'pdf') %>
+</p>
 
 <%= link_to 'Edit', edit_screenplay_path(@screenplay) %> |
-<%= link_to 'Back', screenplays_path %>
+<%= link_to 'Destroy', @screenplay, method: :delete %>
+
+<p>
+  <pre><%= @screenplay.fountain %></pre>
+</p>
+

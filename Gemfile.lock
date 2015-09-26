@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/maxjacobson/smashcut.git
+  revision: 9c04e7175a7bfa16fe53c46d3699ce9b73e7d77f
+  specs:
+    smashcut (0.0.1)
+      parslet (~> 1.7)
+      prawn (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +47,7 @@ GEM
     arel (6.0.3)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    blankslate (3.1.3)
     builder (3.2.2)
     byebug (6.0.2)
     coffee-rails (4.1.0)
@@ -73,6 +82,12 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     normalize-rails (3.0.3)
+    parslet (1.7.1)
+      blankslate (>= 2.0, <= 4.0)
+    pdf-core (0.6.0)
+    prawn (2.0.2)
+      pdf-core (~> 0.6.0)
+      ttfunk (~> 1.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -123,6 +138,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    ttfunk (1.4.0)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -148,6 +164,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  smashcut!
   spring
   sqlite3
   turbolinks

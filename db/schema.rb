@@ -15,12 +15,9 @@ ActiveRecord::Schema.define(version: 20150926172053) do
 
   create_table "screenplays", force: :cascade do |t|
     t.text     "fountain"
-    t.string   "secure_id"
     t.string   "title"
-    t.string   "author_name"
-    t.string   "password"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
