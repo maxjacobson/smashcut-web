@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Needs to be kept in sync with .ruby-version file
+ruby '2.2.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
