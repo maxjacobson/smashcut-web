@@ -16,7 +16,7 @@
 </p>
 
 <%= link_to 'Edit', edit_screenplay_path(@screenplay) %> |
-<%= link_to 'Destroy', @screenplay, method: :delete %>
+<%= link_to 'Destroy', @screenplay, method: :delete, data: {confirm: 'ya sure?'} %>
 
 <p>
   <pre><%= @screenplay.fountain %></pre>
