@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @screenplay.title %>
+</p>
+
+<p>
+  <strong>Fountain:</strong>
+  <%= @screenplay.fountain %>
+</p>
+
+<%# <p> %>
+<%#   <strong>Stats:</strong> %>
+<%#   <%= pluralize 'scene', @screenplay.scene_count %1> %>
+<%# </p> %>
+
+<%= link_to 'Edit', edit_screenplay_path(@screenplay) %> |
+<%= link_to 'Back', screenplays_path %>

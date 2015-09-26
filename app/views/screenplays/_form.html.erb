@@ -1,0 +1,38 @@
+<%= form_for(@screenplay) do |f| %>
+  <% if @screenplay.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@screenplay.errors.count, "error") %> prohibited this screenplay from being saved:</h2>
+
+      <ul>
+      <% @screenplay.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author_name %><br>
+    <%= f.text_field :author_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+    <div>(Not stored very securely)</div>
+  </div>
+
+  <div class="field">
+    <%= f.label :fountain %><br>
+    <%= f.text_area :fountain %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
