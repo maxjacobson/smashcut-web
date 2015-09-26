@@ -14,6 +14,10 @@ class Screenplay < ActiveRecord::Base
   private
 
   def smashcut
-    @smashcut ||= Smashcut::Screenplay.from_fountain(fountain)
+    @smashcut ||= Smashcut::Screenplay.from_fountain(normalized_fountain)
+  end
+
+  def normalized_fountain
+    fountain.gsub("\r\n", "\n")
   end
 end
